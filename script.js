@@ -24,6 +24,10 @@ hamb.addEventListener('click', event => {
 
 // instanciação de objetos
 
+content.style.display = 'none'
+loading.style.display = 'flex'
+loadingScreen()
+
 let ger = await instanciarCountry("germany");
 let aus = await instanciarCountry("austria");
 let bel = await instanciarCountry("belgium");
@@ -54,6 +58,12 @@ let swe = await instanciarCountry("sweden");
 
 
 const paises = [ger, aus, bel, bul, cze, cyp, cro, den, slok, slov, spa, est, fin, fra, gre, hun, ire, ita, lat, lit, lux, mal, net, pol, por, rom, swe];
+
+setTimeout(() => {
+    content.style.display = 'block'
+    loading.style.display = 'none'
+    loadingProgress.setAttribute('value', 0);  
+}, 1500);
 
 
 // botões frente e trás
