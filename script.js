@@ -41,7 +41,7 @@ let fra = await instanciarCountry("france");
 let gre = await instanciarCountry("greece");
 let hun = await instanciarCountry("hungary");
 let ire = await instanciarCountry("ireland");
-let ita = await instanciarCountry("italy");
+// let ita = await instanciarCountry("italy");
 let lat = await instanciarCountry("latvia");
 let lit = await instanciarCountry("lithuania");
 let lux = await instanciarCountry("luxembourg");
@@ -53,7 +53,7 @@ let rom = await instanciarCountry("romania");
 let swe = await instanciarCountry("sweden");
 
 
-const paises = [ger, aus, bel, bul, cze, cyp, cro, den, slok, slov, spa, est, fin, fra, gre, hun, ire, ita, lat, lit, lux, mal, net, pol, por, rom, swe];
+const paises = [ger, aus, bel, bul, cze, cyp, cro, den, slok, slov, spa, est, fin, fra, gre, hun, ire, lat, lit, lux, mal, net, pol, por, rom, swe];
 
 
 // botões frente e trás
