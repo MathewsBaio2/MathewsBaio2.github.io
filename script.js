@@ -24,7 +24,7 @@ hamb.addEventListener('click', event => {
 
 // instanciação de objetos
 
-let ger = await instanciarCountry("germany");
+// let ger = await instanciarCountry("germany");
 let aus = await instanciarCountry("austria");
 let bel = await instanciarCountry("belgium");
 let bul = await instanciarCountry("bulgaria");
@@ -53,7 +53,7 @@ let rom = await instanciarCountry("romania");
 let swe = await instanciarCountry("sweden");
 
 
-const paises = [ger, aus, bel, bul, cze, cyp, cro, den, slok, slov, spa, est, fin, fra, gre, hun, ire, lat, lit, lux, mal, net, pol, por, rom, swe];
+const paises = [aus, bel, bul, cze, cyp, cro, den, slok, slov, spa, est, fin, fra, gre, hun, ire, lat, lit, lux, mal, net, pol, por, rom, swe];
 
 
 // botões frente e trás
