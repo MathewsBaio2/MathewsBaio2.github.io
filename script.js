@@ -16,7 +16,7 @@ const loadingProgress = document.querySelector('progress');
 // hamb menu mobile
 
 const hamb = document.querySelector('.hamb');
-const menu = document.querySelector('.menu');
+const menu = document.querySelector('nav');
 
 hamb.addEventListener('click', event => {
     menu.classList.toggle('active');
