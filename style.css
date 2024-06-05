@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+/* 
+
+Justificativa das cores: a paleta de cores utilizada é a mesma encontrada na bandeira da União Europeia - conforme o significado da oficial da bandeira: doze estrelas douradas dispostas em círculo sobre um fundo azul, que simbolizam os ideais de unidade, solidariedade e harmonia entre os povos da Europa - muitos destes sentimentos explorados no design da bandeira, com destaque a "harmonia" são encontrados na cor azul, que é a predominante da paleta. O amarelo é utilizado principalmente como uma ferramenta de destaque, gerando contraste.
+
+
+Justificativa da tipografia: foi utilizado fontes sem serifa por não haver muita necessidade de leitura, sendo um site com muito pouco texto para se justificar a necessidade de serifa para este fim específico. Além disso, a fonte sem serifa foi utilizada para equilibrar o tom do site, por se tratar de um tema mais sério - nações e um bloco econômico -, no entanto trazendo informações triviais, esse estilo de fonte deixa o site mais leve de se consumir, do contrário ficaria exageradamente formal.
+
+*/
+
+
+body {
+    --white: #f9f9f9;
+    --black: #36383F;
+    --blue: #003399;
+    --yellow: #FFDD00;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    background-color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    
+
+    
+}
+
+.content {
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 60px 1fr 60px;
+    grid-template-areas: 
+    "header"
+    "middle"
+    "footer";
+}
+
+
+
+header {
+    background-color: var(--blue);
+    width: 100%;
+    height: 60px;
+    display: flex;
+    position: sticky;
+    top: 0;
+    align-items: center;
+    grid-area: header;
+
+}
+
+.middle {
+    grid-area: middle;
+}
+
+
+footer {
+    grid-area: footer;
+    width: 100%;
+    height: 60px;
+    background-color: var(--blue);
+}
+
+h1 {
+    display: inline-block;
+    margin-left: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: var(--yellow);
+}
+
+.logo-desktop{
+    display: none;
+}
+
+header img {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.hamb {
+    
+    position: fixed;
+    left: calc(100vw - 15vw) ;
+    padding: 40px 20px;
+    
+}
+
+.hamb-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+}
+
+.hamb-line::before,
+.hamb-line::after{
+
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+
+}
+
+.hamb-line::before{
+    top: 5px;
+}
+.hamb-line::after{
+    top: -5px;
+}
+
+.menu {
+    background-color: var(--blue);
+    height: 100vh;
+    width: 100vw;
+    max-width: 500px;
+    position: fixed;
+    top: 0;
+    right: -1200px;
+    font-size: 2.5rem;
+    transition: .4s ease-out;
+    margin-top: 55px;
+    list-style-type: none;
+    
+}
+
+.menu li a {
+    display: block;
+    margin-top: 24px;
+    text-decoration: none;
+    color: var(--white);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.menu li a:hover {
+    background-color: var(--yellow);
+}
+
+
+.menu.active {
+    right: 0;
+
+}
+
+h2 {
+    margin: 24px 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.4rem;
+    border-bottom: var(--blue) solid 1px;
+}
+
+h3 {
+    margin: 5px auto;
+    padding-top: 25px;
+    text-align: center;
+    
+
+    width: 248px;
+    height: 50px;
+
+
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+p {
+    margin: 5px;
+}
+
+h2 ~ p {
+    margin: 0 24px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.country-images figure {
+    margin: 10px 0;
+    text-align: center;
+    
+}
+
+.country-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #e6e6e6;
+    width: 200px;
+    padding: 24px 24px;
+    margin: 5px auto;
+    width: 100%;
+    max-width: 200px; 
+
+    border-top: var(--blue) solid 3px;
+    border-bottom: var(--blue) solid 3px;
+
+    border-radius: 25px;
+    
+    
+}
+
+.country-info {
+    margin: 5px auto;
+    padding: 24px 24px;
+    width: 100%;
+    max-width: 200px; 
+    
+    
+
+    font-size: 1rem;
+    color: var(--white);
+    
+}
+
+form {
+    margin-top: 1.8rem;
+    text-align: center;
+}
+
+#brasao {
+    width: 150px;
+    height: 180px;
+    
+}
+
+#bandeira {
+    width: 220px;
+    height: 180px;
+    
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-start;
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin: 24px auto;
+    background-image: linear-gradient(to right bottom, #003399, #0038a6, #013db4, #0242c1, #0347cf);
+    box-shadow: 0 5px 10px 0 var(--black);
+    
+    border: var(--blue) solid 3px;
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+
+    max-width: 250px;
+    
+}
+
+.carrossel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 24px;
+}
+
+.text-destaque {
+    color: var(--yellow);
+    font-weight: 700;
+}
+
+.select {
+    padding: 5px;
+    text-align: center;
+    background-color: var(--blue);
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+    
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+button {
+    background-color: var(--blue);
+    color: var(--white);
+    border: var(--blue);
+    padding: 5px;
+    height: 30px;
+    
+}
+
+.chevron:hover {
+    width: 5.1%;
+    cursor: pointer;
+}
+
+.showing-content {
+    display: block;
+}
+
+.loading {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 696px;
+    width: 100%;
+}
+
+.loading img {
+    animation: rotateStars;
+    animation-duration: 3.5s;
+    animation-iteration-count: infinite;
+    width: 5%;
+    
+}
+
+#load {
+    margin-bottom: 24px;
+    width: 250px;
+    height: 50px;
+}
+
+@keyframes rotateStars {
+    from {transform: rotate(0)}
+    to {transform: rotate(360deg)}
+    
+
+}
+
+@media (min-width: 768px) {
+
+    .logo-mobile{
+        display: none;
+    }
+
+    .logo-desktop {
+        display: inline;
+    }
+
+
+    .hamb {
+        position: fixed;
+        left: calc(100vw - 8vw) ;
+        padding: 40px 20px;
+    }
+    
+}
+
+@media (min-width: 1200px) {
+
+    .hamb {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 60px;
+        width: 90%;
+        position: fixed;
+        right: 100vw;
+        
+        max-width: none;
+        margin-top: 0;
+        font-size: 32px;
+        transition: none;
+        background-color: transparent;
+        right: auto;
+        margin-right: 10px;
+        
+
+    }
+
+    
+    
+    .menu li a {
+        text-decoration: none;
+        color: var(--white);
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        margin-top: 0;
+    }
+
+    h3 {
+        width: 498px;
+    }
+
+    .country-images {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        max-width: 450px; 
+    }
+
+    .country-info {
+        max-width: 450px;
+    }
+
+    .brasao {
+        margin-bottom: 22px;
+    }
+
+    
+
+    .card {
+        max-width: 500px;
+    }
+
+}
+
+
+
