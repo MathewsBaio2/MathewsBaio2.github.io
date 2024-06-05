@@ -41,8 +41,9 @@ async function buscarPais(nomeChave) {
 
 async function instanciarCountry(nomeChave) {
     
-    const response = await fetch(`https://restcountries.com/v3.1/name/${nomeChave}`);
-    const data = await response.json();
+    try {
+        const response = await fetch(`https://restcountries.com/v3.1/name/${nomeChave}`);
+        const data = await response.json();
 
     if (response.status == 404) {
         let country = new Country (
@@ -84,6 +85,21 @@ async function instanciarCountry(nomeChave) {
     )
     
     return country 
+
+    } catch (error) {
+        let country = new Country (
+            "Not Found",
+            "https://http.cat/images/404.jpg",
+            "https://http.cat/images/404.jpg",
+            "Not Found",
+            "Not Found",
+            "Not Found",
+            "Not Found",
+            "Not Found"
+        )
+
+        return country
+    }
 
 }
 
